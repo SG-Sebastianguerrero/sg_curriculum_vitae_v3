@@ -6,6 +6,7 @@ import react from "@vitejs/plugin-react";
 export default {
   plugins: [
     VitePWA({
+      disable: process.env.NODE_ENV === "development",
       includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
       manifest: {
         name: "SG Curriculum Vitae",
@@ -34,7 +35,7 @@ export default {
       },
       registerType: "autoUpdate",
       devOptions: {
-        enabled: true,
+        enabled: false,
       },
     }),
     react(),
